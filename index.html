@@ -854,10 +854,25 @@
         height: 24px;
       }
 
-      .corner.tl { top: 10px; left: 10px; }
-      .corner.tr { top: 10px; right: 10px; }
-      .corner.bl { bottom: 10px; left: 10px; }
-      .corner.br { bottom: 10px; right: 10px; }
+      .corner.tl {
+        top: 10px;
+        left: 10px;
+      }
+
+      .corner.tr {
+        top: 10px;
+        right: 10px;
+      }
+
+      .corner.bl {
+        bottom: 10px;
+        left: 10px;
+      }
+
+      .corner.br {
+        bottom: 10px;
+        right: 10px;
+      }
 
       /* Eyebrow: shorter letter-spacing */
       .eyebrow {
@@ -1009,13 +1024,27 @@
     }
 
     #hacker-intro.exit {
-      animation: hackerExit 0.7s cubic-bezier(.77,0,.18,1) forwards;
+      animation: hackerExit 0.7s cubic-bezier(.77, 0, .18, 1) forwards;
     }
 
     @keyframes hackerExit {
-      0%   { opacity: 1; transform: scale(1); }
-      40%  { opacity: 1; transform: scale(1.06); filter: brightness(2.5); }
-      100% { opacity: 0; transform: scale(0.94); filter: brightness(0); pointer-events: none; }
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      40% {
+        opacity: 1;
+        transform: scale(1.06);
+        filter: brightness(2.5);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0.94);
+        filter: brightness(0);
+        pointer-events: none;
+      }
     }
 
     /* Matrix canvas sits behind everything in the intro */
@@ -1035,17 +1064,17 @@
       border-radius: 4px;
       padding: clamp(24px, 5vw, 44px) clamp(20px, 5vw, 40px);
       box-shadow:
-        0 0 0 1px rgba(201,163,92,0.2),
-        0 0 40px rgba(201,163,92,0.18),
-        0 0 80px rgba(201,163,92,0.08),
-        inset 0 0 30px rgba(0,0,0,0.6);
+        0 0 0 1px rgba(201, 163, 92, 0.2),
+        0 0 40px rgba(201, 163, 92, 0.18),
+        0 0 80px rgba(201, 163, 92, 0.08),
+        inset 0 0 30px rgba(0, 0, 0, 0.6);
     }
 
     .hacker-terminal::before {
       content: "";
       position: absolute;
       inset: 6px;
-      border: 1px solid rgba(201,163,92,0.14);
+      border: 1px solid rgba(201, 163, 92, 0.14);
       border-radius: 2px;
       pointer-events: none;
     }
@@ -1057,23 +1086,33 @@
       gap: 8px;
       margin-bottom: 20px;
       padding-bottom: 12px;
-      border-bottom: 1px solid rgba(201,163,92,0.2);
+      border-bottom: 1px solid rgba(201, 163, 92, 0.2);
     }
 
     .terminal-dot {
-      width: 10px; height: 10px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
-      background: rgba(201,163,92,0.35);
+      background: rgba(201, 163, 92, 0.35);
     }
-    .terminal-dot:first-child { background: rgba(255,80,80,0.6); }
-    .terminal-dot:nth-child(2) { background: rgba(255,180,60,0.6); }
-    .terminal-dot:nth-child(3) { background: rgba(80,200,80,0.6); }
+
+    .terminal-dot:first-child {
+      background: rgba(255, 80, 80, 0.6);
+    }
+
+    .terminal-dot:nth-child(2) {
+      background: rgba(255, 180, 60, 0.6);
+    }
+
+    .terminal-dot:nth-child(3) {
+      background: rgba(80, 200, 80, 0.6);
+    }
 
     .terminal-title {
       font-family: 'Inter', monospace;
       font-size: 11px;
       letter-spacing: 0.2em;
-      color: rgba(201,163,92,0.6);
+      color: rgba(201, 163, 92, 0.6);
       text-transform: uppercase;
       margin-left: 6px;
     }
@@ -1096,30 +1135,52 @@
       transform: translateX(0);
     }
 
-    .terminal-line .prompt { color: rgba(201,163,92,0.5); margin-right: 8px; }
-    .terminal-line .ok    { color: #4ade80; }
-    .terminal-line .warn  { color: #facc15; }
-    .terminal-line .hi    { color: #f6f0e2; font-weight: 600; }
+    .terminal-line .prompt {
+      color: rgba(201, 163, 92, 0.5);
+      margin-right: 8px;
+    }
+
+    .terminal-line .ok {
+      color: #4ade80;
+    }
+
+    .terminal-line .warn {
+      color: #facc15;
+    }
+
+    .terminal-line .hi {
+      color: #f6f0e2;
+      font-weight: 600;
+    }
 
     /* Blinking cursor */
     .term-cursor {
       display: inline-block;
-      width: 8px; height: 14px;
+      width: 8px;
+      height: 14px;
       background: #c9a35c;
       vertical-align: middle;
       margin-left: 2px;
       animation: blink 0.75s step-start infinite;
     }
+
     @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
     }
 
     /* Final ACCESS GRANTED banner */
     .access-granted {
       margin-top: 22px;
       padding-top: 16px;
-      border-top: 1px solid rgba(201,163,92,0.25);
+      border-top: 1px solid rgba(201, 163, 92, 0.25);
       font-family: 'Playfair Display', serif;
       font-style: italic;
       font-size: clamp(16px, 3.5vw, 22px);
@@ -1129,13 +1190,13 @@
       opacity: 0;
       transform: scale(0.94);
       transition: opacity 0.5s ease, transform 0.5s ease;
-      text-shadow: 0 0 20px rgba(201,163,92,0.5);
+      text-shadow: 0 0 20px rgba(201, 163, 92, 0.5);
     }
+
     .access-granted.show {
       opacity: 1;
       transform: scale(1);
     }
-
   </style>
 </head>
 
@@ -1160,11 +1221,16 @@
         <div class="terminal-dot"></div>
         <span class="terminal-title">secure_channel.exe</span>
       </div>
-      <div class="terminal-line" id="tl1"><span class="prompt">&gt;_</span> Initializing secure channel<span class="term-cursor"></span></div>
-      <div class="terminal-line" id="tl2"><span class="prompt">&gt;_</span> Authenticating sender identity<span class="ok"> ........</span></div>
-      <div class="terminal-line" id="tl3"><span class="prompt">&gt;_</span> Locating encrypted package<span class="ok"> .............</span></div>
-      <div class="terminal-line" id="tl4"><span class="prompt">&gt;_</span> Decrypting invitation<span class="warn"> ████████████ 100%</span></div>
-      <div class="terminal-line" id="tl5"><span class="prompt">&gt;_</span> Status: <span class="ok">✓ IDENTITY VERIFIED — OPENING INVITATION</span></div>
+      <div class="terminal-line" id="tl1"><span class="prompt">&gt;_</span> Initializing secure channel<span
+          class="term-cursor"></span></div>
+      <div class="terminal-line" id="tl2"><span class="prompt">&gt;_</span> Authenticating sender identity<span
+          class="ok"> ........</span></div>
+      <div class="terminal-line" id="tl3"><span class="prompt">&gt;_</span> Locating encrypted package<span class="ok">
+          .............</span></div>
+      <div class="terminal-line" id="tl4"><span class="prompt">&gt;_</span> Decrypting invitation<span class="warn">
+          ████████████ 100%</span></div>
+      <div class="terminal-line" id="tl5"><span class="prompt">&gt;_</span> Status: <span class="ok">✓ IDENTITY VERIFIED
+          — OPENING INVITATION</span></div>
       <div class="access-granted" id="accessGranted">✦ &nbsp; A Special Invitation Awaits You &nbsp; ✦</div>
     </div>
   </div>
@@ -1205,13 +1271,13 @@
 
           <h1 class="headline" id="headline">
             Happy Teacher's Day
-            <span class="accent">— Celebrating Our Mentors</span>
+            <span class="accent"> SRAVANTHI MAM ❤️</span>
           </h1>
 
-          <p class="quote">
+          <!-- <p class="quote">
             "Behind every confident learner is someone who believed, guided, challenged,
             and inspired them to grow."
-          </p>
+          </p> -->
 
           <p class="body-text">
             With immense gratitude and appreciation, we warmly invite our wonderful trainers
@@ -1265,7 +1331,7 @@
                 </div>
                 <div class="detail-copy">
                   <div class="k">Venue</div>
-                  <div class="v">KVK Techoid</div>
+                  <div class="v">KVK Technoid</div>
                 </div>
               </div>
               <div class="detail-item">
@@ -1287,17 +1353,17 @@
 
             <div class="host-line">
               Hosted by
-              <b>Our Team, KVK Techoid</b>
+              <b>Our Team, KVK Technoid</b>
             </div>
           </div>
           <!-- ===== END EVENT DETAILS ===== -->
 
           <div class="divider-orn"><span class="mark">✦</span></div>
 
-          <p class="closing-quote">
+          <!-- <p class="closing-quote">
             "Your guidance became our learning, your experience became our inspiration,
             and your encouragement became our confidence."
-          </p>
+          </p> -->
 
           <p class="body-text" style="margin-bottom:26px;">
             We would be delighted to celebrate this special day with you.
@@ -1306,13 +1372,13 @@
 
           <p class="signoff">
             With gratitude,
-            <b>Our Team, KVK Techoid</b>
+            <b>Our Team, KVK Technoid</b>
           </p>
 
           <div class="thank-you">
             <div class="ty-mark">Thank you, for everything.</div>
-            <p>Please join us for an evening of appreciation, warmth, and celebration —
-              in honor of the mentors who shaped our path.</p>
+            <!-- <p>Please join us for an evening of appreciation, warmth, and celebration —
+              in honor of the mentors who shaped our path.</p> -->
           </div>
         </div>
       </div>
@@ -1325,14 +1391,14 @@
          HACKER INTRO — Matrix rain + terminal sequence
          ============================================================ */
       (function runHackerIntro() {
-        const intro      = document.getElementById('hacker-intro');
-        const mCanvas    = document.getElementById('matrix-canvas');
-        const mCtx      = mCanvas.getContext('2d');
-        const stageEnv  = document.getElementById('stage-envelope');
+        const intro = document.getElementById('hacker-intro');
+        const mCanvas = document.getElementById('matrix-canvas');
+        const mCtx = mCanvas.getContext('2d');
+        const stageEnv = document.getElementById('stage-envelope');
 
         /* --- resize matrix canvas --- */
         function resizeMatrix() {
-          mCanvas.width  = window.innerWidth;
+          mCanvas.width = window.innerWidth;
           mCanvas.height = window.innerHeight;
         }
         resizeMatrix();
@@ -1379,10 +1445,10 @@
         const matrixTimer = setInterval(drawMatrix, 40);
 
         /* --- Terminal lines sequence --- */
-        const lines    = [1, 2, 3, 4, 5].map(n => document.getElementById('tl' + n));
-        const granted  = document.getElementById('accessGranted');
-        const delays   = [300, 950, 1700, 2450, 3100]; /* when each line appears */
-        const exitAt   = 4800;                          /* when intro exits */
+        const lines = [1, 2, 3, 4, 5].map(n => document.getElementById('tl' + n));
+        const granted = document.getElementById('accessGranted');
+        const delays = [300, 950, 1700, 2450, 3100]; /* when each line appears */
+        const exitAt = 4800;                          /* when intro exits */
 
         delays.forEach((delay, i) => {
           setTimeout(() => lines[i].classList.add('show'), delay);
